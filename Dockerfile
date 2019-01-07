@@ -6,7 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN REPO=http://cdn-fastly.deb.debian.org && \
     echo "deb $REPO/debian stretch main\ndeb $REPO/debian-security stretch/updates main" > /etc/apt/sources.list && \
     apt-get -yq update && apt-get install -yq eatmydata apt-utils && eatmydata apt-get -yq upgrade && \
-    eatmydata apt-get -yq install curl bzip2 make gcc libxtst-dev libgtk2.0-dev && eatmydata apt-get clean && rm -rf /var/lib/apt/*
+    eatmydata apt-get -yq install curl bzip2 make gcc libxtst-dev libgtk2.0-dev \
+    epiphany-browser evince \
+    && eatmydata apt-get clean && rm -rf /var/lib/apt/*
 RUN curl -L https://ftp.eiffel.com/pub/download/18.11/Eiffel_18.11_gpl_102592-linux-x86-64.tar.bz2 | tar xj -C /opt
 
 # Define Eiffel environment variables
