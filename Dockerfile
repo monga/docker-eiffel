@@ -9,7 +9,7 @@ RUN REPO=http://cdn-fastly.deb.debian.org && \
     eatmydata apt-get -yq install curl bzip2 make gcc libxtst-dev libgtk2.0-dev \
     epiphany-browser evince \
     && eatmydata apt-get clean && rm -rf /var/lib/apt/*
-RUN curl -L https://ftp.eiffel.com/pub/download/20.05/Eiffel_20.05_gpl_104521-linux-x86-64.tar.bz2 | tar xj -C /opt
+RUN curl -L https://ftp.eiffel.com/pub/download/20.05/Eiffel_20.05_rev_104521-linux-x86-64.tar.bz2 | tar xj -C /opt
 
 # Define Eiffel environment variables
 ENV ISE_EIFFEL /opt/Eiffel_20.05
