@@ -8,7 +8,9 @@ RUN apt-get -yq update && apt-get install -yq eatmydata apt-utils && eatmydata a
     && eatmydata apt-get autoremove --purge -y && eatmydata apt-get clean && rm -rf /var/lib/apt/*
 RUN curl -L https://ftp.eiffel.com/pub/download/19.05/Eiffel_19.05_gpl_103187-linux-x86-64.tar.bz2 | tar xj -C /opt
 
-USER $DOCKER_USER
+RUN mkdir $DOCKER_HOME/.config/openbox
+ADD lxde-rc.xml $DOCKER_HOME/.config/openbox
+RUN chown $DOCKER_USER:$DOCKER_GROUP $DOCKER_HOME/.config/openbox
 # Define Eiffel environment variables
 ENV ISE_EIFFEL /opt/Eiffel_19.05
 ENV ISE_PLATFORM linux-x86-64
