@@ -11,6 +11,7 @@ RUN curl -L https://ftp.eiffel.com/pub/download/19.05/Eiffel_19.05_gpl_103187-li
 RUN mkdir $DOCKER_HOME/.config/openbox
 ADD lxde-rc.xml $DOCKER_HOME/.config/openbox
 RUN chown $DOCKER_USER:$DOCKER_GROUP $DOCKER_HOME/.config/openbox
+RUN echo ulimit -c 0 >> $DOCKER_HOME/.profile
 # Define Eiffel environment variables
 ENV ISE_EIFFEL /opt/Eiffel_19.05
 ENV ISE_PLATFORM linux-x86-64
