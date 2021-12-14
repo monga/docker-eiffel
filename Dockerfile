@@ -1,5 +1,5 @@
 FROM x11vnc/desktop
-LABEL maintainer "Mattia Monga <monga@debian.org>"
+LABEL maintainer "Mattia Monga <mattia.monga@unimi.it>"
 
 USER root
 ENV DEBIAN_FRONTEND noninteractive
